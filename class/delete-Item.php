@@ -1,7 +1,7 @@
 <?php
-require('class/product.php');
+require('class/queries.php');
 
-class DeleteItem extends Product
+class DeleteItem extends Queries
 {
     public $skuArray;
 
@@ -17,10 +17,5 @@ class DeleteItem extends Product
             $sql = 'DELETE FROM `products` WHERE `products`.`sku` = "' . $sku . '"';
             self::queryDatabase($sql);
         }
-    }
-
-    function addItem()
-    {
-        // Ignore This
     }
 }
