@@ -23,13 +23,13 @@ class AddItemFurniture extends Product
         self::queryDatabase($sql);
     }
 
-    // This shall be called when adding to database
+    // This shall be called when displaying on product Page
     static function display($row)
     {
         echo 'Dimension: ' . $row['height'] . 'x' . $row["width"] . 'x' . $row["length"];
     }
 
-    // This shall be called when displaying on product Page
+    // This shall be called when adding to database
     static function extras($posts)
     {
         return [$posts['height'], $posts['width'], $posts['length']];

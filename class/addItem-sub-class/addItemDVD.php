@@ -18,13 +18,13 @@ class AddItemDVD extends Product
         self::queryDatabase($sql);
     }
 
-    // This shall be called when adding to database
+    // This shall be called when displaying on product Page
     static function display($row)
     {
         echo 'Size: ' . $row['size'] . 'MB';
     }
 
-    // This shall be called when displaying on product Page
+    // This shall be called when adding to database
     static function extras($posts)
     {
         return [$posts["size"]];
