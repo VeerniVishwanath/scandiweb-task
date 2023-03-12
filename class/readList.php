@@ -1,11 +1,21 @@
 <?php
-require_once('config/database.php');
+foreach (glob('class/addItem-sub-class/*.php') as $filename) {
+    include_once $filename;
+}
+require_once('class/queries.php');
 
-class ReadList
+class ReadList extends Queries
 {
+
+    public function displayDetails($row)
+    {
+        $productClass = 'AddItem' . $row["ProductType"];
+        $productClass::display($row);
+    }
+
     public function readList()
     {
-        global $conn;
-        return $conn->query("SELECT * FROM `products`");
+        $sql = "SELECT * FROM `products`";
+        return self::queryDatabase("SELECT * FROM `products`");
     }
 }

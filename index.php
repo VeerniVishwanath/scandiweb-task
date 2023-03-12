@@ -41,9 +41,7 @@ include('class/readList.php');
                         echo '<div class="text-left"><input type="checkbox" name="delete-checkbox[]" class="delete-checkbox" value=' . $row["sku"] . '></br></div> ';
                         echo '<div> ' . $row["sku"] . '</br>' . $row["name"] . '</br>'  . $row["price"] .
                             ' $' . '</br>';
-                        echo $row["ProductType"] == "DVD" ? 'Size: ' . $row['size'] . 'MB' : "";
-                        echo $row["ProductType"] == "Book" ? 'Weight: ' . $row['weight'] . 'KG' : "";
-                        echo $row["ProductType"] == "Furniture" ? 'Dimension: ' . $row['height'] . 'x' . $row["width"] . 'x' . $row["length"] : "";
+                        $obj->displayDetails($row);
                         echo '</div></div>';
                     }
                 }

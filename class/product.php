@@ -1,7 +1,7 @@
 <?php
-require_once("config/database.php");
+require('class/queries.php');
 
-abstract class Product
+abstract class Product extends Queries
 {
     public $sku;
     public $name;
@@ -19,9 +19,7 @@ abstract class Product
 
     abstract function addItem();
 
-    protected function queryDatabase($sql)
-    {
-        global $conn;
-        $conn->query($sql);
-    }
+    abstract static function display($row);
+
+    abstract static function extras($posts);
 }
